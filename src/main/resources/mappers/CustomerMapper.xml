@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.CustomerMapper">
+    <!--int insertUser();-->
+    <insert id="insertCustomer">
+        insert into customers values(10,'张三','qzd1226@163.com',now())
+    </insert>
+</mapper>
