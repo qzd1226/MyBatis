@@ -2,9 +2,35 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="mapper.CustomerMapper">
-    <!--int insertUser();-->
+    <!--int insertCustomer();-->
     <insert id="insertCustomer">
-        insert into customers values(10,'张三','qzd1226@163.com',now())
+        insert into customers values(11,'李四','qzd16@163.com',now())
     </insert>
+    <!--void deleteCustomer();-->
+    <delete id="deleteCustomer">
+        delete from customers where id = 5
+    </delete>
+
+    <!--void updateCustomer();-->
+    <update id="updateCustomer">
+        update updateCustomer set username = '张三' where id = 4
+    </update>
+
+    <!--User getCustomerById();-->
+    <!--
+        查询功能的标签必须设置resultType或resultMap
+        resultType：设置默认的映射关系
+        resultMap：设置自定义的映射关系
+    -->
+    <select id="getCustomerById" resultType="Customer">
+        select * from customers where id = 3
+    </select>
+
+    <!--List<User> getAllCustomer();-->
+    <select id="getAllCustomer" resultType="Customer">
+        select * from customers
+    </select>
+
 </mapper>

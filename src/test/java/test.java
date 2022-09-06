@@ -1,3 +1,4 @@
+import bean.Customer;
 import mapper.CustomerMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -6,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class test {
     @Test
@@ -24,9 +26,16 @@ public class test {
         CustomerMapper customerMapper = sqlSession.getMapper(CustomerMapper.class);
         //调用UserMapper接口中的方法，就可以根据UserMapper的全类名匹配元素文件，
         // 通过调用的方法名匹配 映射文件中的SQL标签，并执行标签中的SQL语句
-        int result = customerMapper.insertCustomer();
-        System.out.println(result);
+
+        //int result = customerMapper.insertCustomer();
+        //System.out.println(result);
+        customerMapper.deleteCustomer();
+        List<Customer> list = customerMapper.getAllCustomer();
+        //上传修改
         sqlSession.commit();
+        list.forEach((customer) -> {
+            System.out.println(customer);
+        });
     }
 
 }
