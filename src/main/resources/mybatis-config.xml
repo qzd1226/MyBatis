@@ -3,6 +3,19 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!--设置类型别名-->
+    <typeAliases>
+        <!--
+            typeAlias：设置某个类型的别名
+            属性：
+                type：设置需要设置别名的类型
+                alias：设置某个类型的别名，若不设置该属性，那么该类型拥有默认的别名，即类名且不区分大小写
+        -->
+        <!--<typeAlias type="bean.Customer"></typeAlias>-->
+        <!--以包为单位，将包下所有的类型设置默认的类型别名，即类名且不区分大小写-->
+        <package name="bean"/>
+    </typeAliases>
+
     <!--设置连接数据库的环境-->
     <environments default="development">
         <environment id="development">
@@ -19,4 +32,5 @@
     <mappers>
         <mapper resource="mappers/CustomerMapper.xml"/>
     </mappers>
+
 </configuration>
