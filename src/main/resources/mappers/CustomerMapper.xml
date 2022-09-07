@@ -15,7 +15,7 @@
 
     <!--void updateCustomer();-->
     <update id="updateCustomer">
-        update updateCustomer set username = '张三' where id = 4
+        update customers set name = 'lisi' where id = 4
     </update>
 
     <!--User getCustomerById();-->
