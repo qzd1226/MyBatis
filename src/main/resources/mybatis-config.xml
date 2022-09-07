@@ -47,7 +47,8 @@
     </environments>
     <!--引入映射文件-->
     <mappers>
-        <mapper resource="mappers/CustomerMapper.xml"/>
+        <!--<mapper resource="mappers/CustomerMapper.xml"/>-->
+        <package name="mapper"/>
     </mappers>
 
 </configuration>
